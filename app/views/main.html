@@ -1,0 +1,27 @@
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <div class="container-fluid">
+      <a class="navbar-brand" href="#">Marvel</a>
+    </div>
+</nav>
+
+<div class="row navbar-offset">
+  <div class="col-md-8" infinite-scroll="getMoreHeroes()" infinite-scroll-distance="1">
+    <ul class="list-unstyled">
+      <li ng-repeat="hero in heroes" ng-click="selectHero(hero, $index)" data-hero-id="{{hero.id}}" ng-class="{selected: $index === $parent.selectedIndex}">
+        <div class="row marketing">
+          <h4>{{hero.name}}</h4>
+          <p>{{hero.description | description}}
+          <p>Comics: {{hero.comics.available}}</p>
+          <p>Series: {{hero.series.available}}</p>
+          <p>Stories: {{hero.stories.available}}</p>
+          <p>Events: {{hero.events.available}}</p>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <div detail-window></div>
+  <div class="clearfix"></div>
+<footer class="footer">
+	<p>♥ from JHamm</p>
+</footer>

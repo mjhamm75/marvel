@@ -1,0 +1,11 @@
+<div class="col-md-4 hero-box" ng-switch on="isSelected">
+  <div ng-switch-when="false">
+    <h1>Superhero</h1>
+    <p class="lead">None Selected</p>
+  </div>
+  <div ng-switch-when="true">
+    <img ng-src="{{imageUrl}}.{{imageExtension}}">
+    <h1>{{heroName}}</h1>
+  </div>
+  <div detail-footer-window></div>
+</div>
